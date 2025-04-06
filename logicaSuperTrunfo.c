@@ -13,8 +13,6 @@ float PIB1;
 int Turistico1;
 float densidade1;
 float PIBpercapta1;
-float ValorTotal1;
-float Superpoder1;
 
 //BASE DA CARTA 2
 int carta2;
@@ -27,8 +25,6 @@ float PIB2;
 int Turistico2;
 float densidade2;
 float PIBpercapta2;
-float ValorTotal2;
-float Superpoder2;
 
 
 //PESQUISA DA CARTA A
@@ -165,6 +161,11 @@ printf ("A Cidade 1 tem maior numero de ponto turístico.\n"); }
 else
 { printf("A Cidade 2 tem maior numero de ponto turístico.\n");}
 
+if (densidade1 < densidade2)
+{ printf ("A Cidade 1 tem à menor Desidade Populacional.\n"); }
+else
+{ ("A Cidade 2 tem à maior Desidade Populacional.\n"); }
+
 printf("\n");
 
 printf ("CIDADE VENCEDORA!\n");
@@ -191,6 +192,12 @@ if (Turistico1 > Turistico2){
 else
 { printf ("A Cidade 2 Venceu!\n", cidadeVencedora);}
 
+if (densidade1 < densidade2)
+{ printf ("A cidade 1 tem a menor Densidade: Venceu!\n", cidadeVencedora); }
+else
+{ printf ("A cidade 2 tem a menor Densidade: Venceu!\n", cidadeVencedora);}
+
+printf("\n");
 
     return 0;
 }
