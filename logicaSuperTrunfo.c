@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
 
@@ -216,7 +218,7 @@ scanf("%d", &opcao);
 
 switch (opcao) {
     case 1:
-        printf("Comparando População\n");
+        printf("Comparando População:\n");
         if (populacao1 > populacao2) {
             printf("A cidade 1 tem maior população.\n");
         } else if (populacao1 < populacao2) {
@@ -227,7 +229,7 @@ switch (opcao) {
         break;
 
     case 2:
-        printf("Comparando Área\n");
+        printf("Comparando Área:\n");
         if (area1 > area2) {
             printf("A cidade 1 tem maior área.\n");
         } else if (area1 < area2) {
@@ -238,7 +240,7 @@ switch (opcao) {
         break;
 
     case 3:
-        printf("Comparando PIB\n");
+        printf("Comparando PIB:\n");
         if (PIB1 > PIB2) {
             printf("A cidade 1 tem maior PIB.\n");
         } else if (PIB1 < PIB2) {
@@ -249,7 +251,7 @@ switch (opcao) {
         break;
 
     case 4:
-        printf("Comparando Número de Pontos Turísticos\n");
+        printf("Comparando Número de Pontos Turísticos:\n");
         if (Turistico1 > Turistico2) {
             printf("A cidade 1 tem mais pontos turísticos.\n");
         } else if (Turistico1 < Turistico2) {
@@ -260,7 +262,7 @@ switch (opcao) {
         break;
 
     case 5:
-        printf("Comparando Densidade Populacional\n");
+        printf("Comparando Densidade Populacional:\n");
         if (densidade1 < densidade2) {
             printf("A cidade 1 tem menor densidade populacional.\n");
         } else if (densidade1 > densidade2) {
@@ -271,7 +273,7 @@ switch (opcao) {
         break;
 
     case 6:
-        printf("Comparando PIB per Capita\n");
+        printf("Comparando PIB per Capita:\n");
         if (PIBpercapta1 > PIBpercapta2) {
             printf("A cidade 1 tem maior PIB per capita.\n");
         } else if (PIBpercapta1 < PIBpercapta2) {
@@ -288,7 +290,86 @@ switch (opcao) {
     default:
         printf("Opção inválida. Tente novamente.\n");
 }
+printf("Fim do jogo! Obrigado por jogar.\n");
+
+printf("\n");
+
+int numeroJOgador, numeroComputador, resultado;
+char tipodeComparacao;
+
+// Gerar número aleatório
+srand(time(0)); //iniador e numero aleatorios 
+numeroComputador = rand() % 100 + 1; //Numero entre 1 e 100
+
+// Inicio do jogo
+printf ("Bem-Vindo ao Jogo Maior, Menor ou Igual!\n");
+printf ("Você deve escolher um numero e o tipo de comparação.\n");
+printf("P. População\n");
+printf("A. Área\n");
+printf("B. PIB\n");
+printf("T. Número de Pontos Turísticos\n");
+printf("D. Densidade Populacional\n");
+
+printf("Escolha a comparação: ");
+scanf("%c", &tipodeComparacao);
+
+printf("\n");
+
+printf("Digite seu numero (entre 1 e 100): ");
+scanf ("%d", &numeroJOgador);
+
+printf("\n");
+// Exibir numero do computador
+printf ("O número do computatdor é: %d\n" , &numeroComputador);
+
+switch (tipodeComparacao)
+{
+case 'P':
+case 'p':
+printf ("Você escolheu a opção maior!\n");
+ resultado = numeroJOgador > numeroComputador ? : 1 ; 0;
+    break;
+
+case 'A':
+case 'a':
+    printf ("Você escolheu a opção maior!\n");
+     resultado = numeroJOgador > numeroComputador ? : 1 ; 0;
+        break;
+
+case 'B':
+case 'b':
+printf ("Você escolheu a opção igual!\n");
+resultado = numeroJOgador  == numeroComputador ? : 1 ; 0;
+    break;
+
+case 'T':
+case 't':
+    printf ("Você escolheu a opção maior!\n");
+     resultado = numeroJOgador > numeroComputador ? : 1 ; 0;
+        break;
+
+case 'D':
+case 'd':
+printf ("Você escolheu a opção Menor!\n");
+resultado = numeroJOgador < numeroComputador ? : 1 ; 0;
+    break;
+
+default:
+printf("Opção de jogo inválida!");
+
+    break;
+}
+printf ("O número do computatdor é: %d e o do jogador é: %d\n", &numeroComputador, numeroJOgador);
+
+if (resultado == 1)
+{
+   printf ("Parabéns, Você venceu!\n");
+}else
+{
+    printf ("Infelizmente Você perdeu!\n");}
+
 
 printf("Fim do jogo! Obrigado por jogar.\n");
+
 return 0;
 }
